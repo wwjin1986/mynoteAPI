@@ -21,11 +21,14 @@ public class CategoryContoller {
 	@Autowired
 	private CategoryService categoryService;
 
+	@RequestMapping(method = RequestMethod.GET, value ="/")
+	public String welcome() {
+		return "welcome";
+	}
 	@RequestMapping(method = RequestMethod.GET, value = "/categories")
 	public List getAllCategories() {
 		return categoryService.getAllCategories();
 	}
-	
 	@RequestMapping(method = RequestMethod.POST, value ="/categories")
 	public Category addCategory(@Valid @RequestBody Category category) {
 		return categoryService.addCategory(category);
@@ -35,4 +38,6 @@ public class CategoryContoller {
 	public List getCategorybyCategory(@PathVariable String category) {
 		return categoryService.getCategoryByCategory(category);
 	}
+	
+	
 }
