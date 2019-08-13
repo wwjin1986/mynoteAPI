@@ -39,5 +39,9 @@ public class CategoryContoller {
 		return categoryService.getCategoryByCategory(category);
 	}
 	
+	@RequestMapping(method = RequestMethod.DELETE, value = "/categories/{id}")
+	public void deleteCategoryByID(@PathVariable Long id) {
+		categoryService.deleteCategoryByID(id);
+	}
 	
 }
