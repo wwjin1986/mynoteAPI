@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.weiweijin.myNoteAPI.Model.Category;
 import com.weiweijin.myNoteAPI.Service.CategoryService;
-import com.weiweijin.myNoteAPI.repository.CategoryRepository;
+import com.weiweijin.myNoteAPI.Repository.CategoryRepository;
 
 @RestController
 public class CategoryContoller {

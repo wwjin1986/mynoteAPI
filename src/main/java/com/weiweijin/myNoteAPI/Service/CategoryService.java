@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.weiweijin.myNoteAPI.Model.Category;
-import com.weiweijin.myNoteAPI.repository.CategoryRepository;
+import com.weiweijin.myNoteAPI.Repository.CategoryRepository;
 
 @Service
 public class CategoryService {

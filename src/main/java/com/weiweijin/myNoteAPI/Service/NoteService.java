@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.weiweijin.myNoteAPI.Model.Note;
-import com.weiweijin.myNoteAPI.repository.NoteRepository;
+import com.weiweijin.myNoteAPI.Repository.NoteRepository;
 
 @Service
 public class NoteService {

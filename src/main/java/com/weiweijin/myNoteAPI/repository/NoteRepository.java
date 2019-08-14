@@ -1,4 +1,4 @@
-package com.weiweijin.myNoteAPI.repository;
+package com.weiweijin.myNoteAPI.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
