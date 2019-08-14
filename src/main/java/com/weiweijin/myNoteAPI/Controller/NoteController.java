@@ -25,4 +25,9 @@ public class NoteController {
 	public Note addNote(@Valid @RequestBody Note note) {
 		return noteService.addNote(note);
 	}
+	
+	@RequestMapping(method = RequestMethod.DELETE, value = "/notes/{id}")
+	public void deleteNoteByID(@PathVariable Long id) {
+		noteService.deleteNoteByID(id);
+	}
 }
