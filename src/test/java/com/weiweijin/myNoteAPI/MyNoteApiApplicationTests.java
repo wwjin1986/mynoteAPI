@@ -2,9 +2,6 @@ package com.weiweijin.myNoteAPI;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -62,31 +59,31 @@ public class MyNoteApiApplicationTests {
 	@Test
 	public void testNoteController() {
 		//Test GET method
-				given()
-				.when()
-				.get("/notes")
-				.then()
-				.statusCode(200);	
+		given()
+		.when()
+		.get("/notes")
+		.then()
+		.statusCode(200);					
 				
-//				//Test Post method
-				Note note = new Note();
-				note.setTopic("java");
-				note.setNoteText("test");
-				note.setUrl("testurl");
-				int id = given()
-				.contentType("application/json")
-				.body(note)
-				.when().post("/notes").then()
-				.body("topic",equalTo("java"))
-				.body("noteText", equalTo("test"))
-				.body("url", equalTo("testurl"))
-				.extract().path("id");
+		//Test Post method
+		Note note = new Note();
+		note.setTopic("java");
+		note.setNoteText("test");
+		note.setUrl("testurl");
+		int id = given()
+		.contentType("application/json")
+		.body(note)
+		.when().post("/notes").then()
+		.body("topic",equalTo("java"))
+		.body("noteText", equalTo("test"))
+		.body("url", equalTo("testurl"))
+		.extract().path("id");
 				
-//				//Test Delete method
-				given().pathParam("id",id)
-				.when()
-				.delete("/notes/{id}")
-				.then()
-				.statusCode(200);	
+		//Test Delete method
+		given().pathParam("id",id)
+		.when()
+		.delete("/notes/{id}")
+		.then()
+		.statusCode(200);	
 	}
 }

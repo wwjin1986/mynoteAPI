@@ -2,6 +2,9 @@ package com.weiweijin.myNoteAPI.Configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import com.google.common.base.Predicates;
+
 import static springfox.documentation.builders.PathSelectors.regex;
  
 import springfox.documentation.builders.PathSelectors;
@@ -19,7 +22,7 @@ public class swagger {
 	        return new Docket(DocumentationType.SWAGGER_2)  
 	          .select()                                  
 	          .apis(RequestHandlerSelectors.any())              
-	          .paths(regex("/*.*"))                          
+	          .paths(Predicates.not(PathSelectors.regex("/error")))                          
 	          .build();                                           
 	    }
 	}
