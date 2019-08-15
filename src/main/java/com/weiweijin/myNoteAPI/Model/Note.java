@@ -49,6 +49,7 @@ public class Note extends AuditModel{
 	public void setNoteText(String noteText) {
 		this.noteText = noteText;
 	}
+
 	
 	
 }
