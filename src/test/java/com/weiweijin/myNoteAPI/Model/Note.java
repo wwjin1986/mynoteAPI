@@ -5,6 +5,7 @@ public class Note {
 	private String topic;
 	private String url;
 	private String noteText;
+	private String title;
 	public String getTopic() {
 		return topic;
 	}
@@ -23,6 +24,12 @@ public class Note {
 	}
 	public void setNoteText(String noteText) {
 		this.noteText = noteText;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	
 }

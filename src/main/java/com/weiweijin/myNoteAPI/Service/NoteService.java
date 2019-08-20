@@ -21,6 +21,9 @@ public class NoteService {
 		return noteRepository.save(note);
 	}
 	
+	public Note getNoteByID(Long id) {
+		return noteRepository.findById(id).orElse(null);
+	}
 	public void deleteNoteByID(Long id) {
 		noteRepository.deleteById(id);
 	}

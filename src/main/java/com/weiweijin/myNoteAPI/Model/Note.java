@@ -13,6 +13,7 @@ public class Note extends AuditModel{
 	
 	private String url;
 	private String topic;
+	private String title;
 	
 	@Lob
 	@Column(name = "note_text")
@@ -48,6 +49,14 @@ public class Note extends AuditModel{
 
 	public void setNoteText(String noteText) {
 		this.noteText = noteText;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	

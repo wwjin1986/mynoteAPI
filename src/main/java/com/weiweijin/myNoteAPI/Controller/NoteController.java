@@ -30,4 +30,9 @@ public class NoteController {
 	public void deleteNoteByID(@PathVariable Long id) {
 		noteService.deleteNoteByID(id);
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, value ="/notes/{id}")
+	public Note getNoteByID(@PathVariable Long id) {
+		return noteService.getNoteByID(id);
+	}
 }

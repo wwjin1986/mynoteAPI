@@ -70,6 +70,7 @@ public class MyNoteApiApplicationTests {
 		note.setTopic("java");
 		note.setNoteText("test");
 		note.setUrl("testurl");
+		note.setTitle("testjava");
 		int id = given()
 		.contentType("application/json")
 		.body(note)
@@ -77,6 +78,7 @@ public class MyNoteApiApplicationTests {
 		.body("topic",equalTo("java"))
 		.body("noteText", equalTo("test"))
 		.body("url", equalTo("testurl"))
+		.body("title",equalTo("testjava"))
 		.extract().path("id");
 				
 		//Test Delete method
