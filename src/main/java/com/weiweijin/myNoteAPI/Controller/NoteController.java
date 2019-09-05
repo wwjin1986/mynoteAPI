@@ -35,4 +35,9 @@ public class NoteController {
 	public Note getNoteByID(@PathVariable Long id) {
 		return noteService.getNoteByID(id);
 	}
+	
+	@RequestMapping(method = RequestMethod.PUT, value="/notes/{id}")
+	public void changeLiked(@PathVariable Long id) {
+		noteService.changeLiked(id);
+	}
 }

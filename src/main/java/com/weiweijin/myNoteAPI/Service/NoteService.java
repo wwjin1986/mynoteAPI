@@ -27,5 +27,15 @@ public class NoteService {
 	public void deleteNoteByID(Long id) {
 		noteRepository.deleteById(id);
 	}
+	public void changeLiked(Long id) {
+		Note note = noteRepository.findById(id).orElse(null);
+		if (note.getLiked() == null) 
+		{
+			note.setLiked(true);
+		}else {
+			note.setLiked(!note.getLiked());
+		}
+		noteRepository.save(note);
+	}
 
 }
