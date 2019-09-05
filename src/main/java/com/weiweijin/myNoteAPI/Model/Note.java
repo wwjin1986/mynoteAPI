@@ -14,6 +14,14 @@ public class Note extends AuditModel{
 	private String url;
 	private String topic;
 	private String title;
+	public Boolean getLiked() {
+		return liked;
+	}
+
+	public void setLiked(Boolean liked) {
+		this.liked = liked;
+	}
+
 	private Boolean liked;
 	
 	@Lob
