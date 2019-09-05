@@ -14,6 +14,7 @@ public class Note extends AuditModel{
 	private String url;
 	private String topic;
 	private String title;
+	private Boolean liked;
 	
 	@Lob
 	@Column(name = "note_text")
