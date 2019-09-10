@@ -1,7 +1,7 @@
 package com.weiweijin.myNoteAPI.Service;
 
 import java.util.List;
-
+import org.springframework.data.domain.Sort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ public class NoteService {
 	private NoteRepository noteRepository;
 	
 	public List getAllNotes() {
-		return noteRepository.findAll();
+		return noteRepository.findAll(orderByIdAsc());
 	}
 	
 	public Note addNote(Note note) {
@@ -36,6 +36,10 @@ public class NoteService {
 			note.setLiked(!note.getLiked());
 		}
 		noteRepository.save(note);
+	}
+	private Sort orderByIdAsc() {
+		return new Sort(Sort.Direction.ASC,"id");
+				
 	}
 
 }
