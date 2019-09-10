@@ -38,6 +38,10 @@ public class NoteController {
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT, value="/notes/{id}")
+	public Note updateNote(@Valid @RequestBody Note note,@PathVariable Long id) {
+		return noteService.updateNote(note,id);
+	}
+	@RequestMapping(method = RequestMethod.PUT, value="/notes/{id}/like")
 	public void changeLiked(@PathVariable Long id) {
 		noteService.changeLiked(id);
 	}
