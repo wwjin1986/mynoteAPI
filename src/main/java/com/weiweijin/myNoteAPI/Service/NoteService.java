@@ -13,8 +13,8 @@ public class NoteService {
 	@Autowired
 	private NoteRepository noteRepository;
 	
-	public List getAllNotes() {
-		return noteRepository.findAll(orderByIdAsc());
+	public List getAllNotes(String name, String direction) {
+		return noteRepository.findAll(orderBy(name,direction));
 	}
 	
 	public Note addNote(Note note) {
@@ -37,9 +37,8 @@ public class NoteService {
 		}
 		noteRepository.save(note);
 	}
-	private Sort orderByIdAsc() {
-		return new Sort(Sort.Direction.ASC,"id");
+	private Sort orderBy(String name, String direction) {
+		return new Sort(Sort.Direction.fromString(direction),name);
 				
 	}
-
 }

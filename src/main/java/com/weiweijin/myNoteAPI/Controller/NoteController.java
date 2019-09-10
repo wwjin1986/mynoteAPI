@@ -16,9 +16,10 @@ public class NoteController {
 	@Autowired
 	private NoteService noteService;
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/notes")
-	public List getAllNotes() {
-		return noteService.getAllNotes();
+	@RequestMapping(method = RequestMethod.GET, value = "/notes/{name}/{direction}")
+	public List getAllNotes(@PathVariable("name") String name, 
+			@PathVariable("direction") String direction){
+		return noteService.getAllNotes(name,direction);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/notes")
