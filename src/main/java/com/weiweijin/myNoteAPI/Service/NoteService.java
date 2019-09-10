@@ -39,9 +39,8 @@ public class NoteService {
 	}
 	
 	public Note updateNote(Note note,Long id) {
-		Note old = noteRepository.findById(id).orElse(null);
-		old = note;
-		return noteRepository.save(old);
+		note.setId(id);
+		return noteRepository.save(note);
 	}
 	private Sort orderBy(String name, String direction) {
 		return new Sort(Sort.Direction.fromString(direction),name);
